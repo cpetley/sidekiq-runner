@@ -69,7 +69,7 @@ module SidekiqRunner
       cmd << (rbtrace ? File.expand_path('../../script/sidekiq_rbtrace', __dir__) : 'sidekiq')
       cmd << "-c #{concurrency}"
       cmd << '-v' if verbose
-      cmd << "-P #{pidfile}"
+      
       cmd << "-e #{Rails.env}" if defined?(Rails)
       cmd << "-r #{requirefile}" if requirefile
       cmd << "-g '#{tag}'"
